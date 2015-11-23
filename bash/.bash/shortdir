@@ -1,0 +1,103 @@
+#! /bin/bash
+##
+# filename: shortdir
+# descript: treat short-abbrevation of dir path, eg, a.b.c
+# create-t: 2012-01-03
+# author-e: lymslive@sina.com
+#
+# Inspiration from 《Unix Power Tools》
+# Represent path name as dot separated some initial char.
+# Convert between short and long dir path name.
+# Require only one input argument.
+#
+# Input: string some like .a.b.c or ,a,b,c
+# If glob only match one dir path, exit 0, print stdout;
+# If glob more than one paths, exit 1, print to stderr.
+#
+# Input: long dir, relative or absolute
+# convert to short-dir and print stdout, exit 0
+#
+# Short rules:
+# dot(.) short for any tailing chars;
+# comma(,) short for a dot and tailing chars;
+# a. means a*; ,a means .a*
+# normal pattern converstion: . => */ ; , => */.
+# tailing dot(.) is optional;
+# leading .a means ./a*; and ..a means ../a*
+# leading / is absolute path: /a means /a*
+# leading // is HOME dir: //a means ~/a*
+# leading ~ also works: ~a means ~/a*
+# any leading literal base path match itself:
+# /home/a(.) means /home/a*
+# more eg.
+# v.f short for vim/ftplugin
+# ,v.f short for .vim/ftplugin
+# ~v.f ~/v.f ~,v.f ~/,v.f ../v.f can work
+#
+# see tolong.sed and toshort.sed for comment of the fair complex sed script.
+# thy are complex because try to handle as many spacial case as possible.
+##
+
+NAME=$(basename "$0")
+if (( $# != 1 )) || [ -z "$1" ]; then
+    echo "$NAME: Invalid or empty argument!" 1>&2
+    exit 2
+fi
+dir="$1"
+
+toshort="s@^$HOME/@//@;"'
+h;
+s@^[~./]*/@@;
+s@(^|/)\.(.)[^/]*@,\2@g;
+s@(^|/)([^/,])[^/]*@.\2@g;
+s@^\.@@;
+x;
+s@(^[~./]*).*@\1@;
+s@\.*$@@;
+G;
+s@\n@@;
+'
+# Input a long dir name
+if [ -d "$dir" ]; then
+    if [ "$dir" = "$HOME" ]; then echo "//" && exit 0; fi
+    # see footnote for this sed script:
+    echo "$dir" | sed -r "$toshort"
+    exit 0
+fi
+
+# Input a short dir name
+tolong='
+s@^//@~/@;
+s@^(~)([^/])@\1/\2@;
+s@(^|/)(\.+)([^/.])@\1\2/\3@;
+h;
+s@^.*/@@;
+s@$@*@;
+s@\.@*/@g;
+s@,@*/.@g;
+s@^\*/?@@;
+x;
+s@[^/]*$@@;
+G;
+s@\n@@;
+'"s@^~@$HOME@"
+dirpat="$(echo "$dir" | sed -r "$tolong")"
+
+# glob dirpat and set them as new position arguments
+# In case $dirpat is empty, set dummy "x" then shift it away:
+set x $dirpat; shift
+
+if [ "$1" = "$dirpat" ]; then
+    # pattern didn't match (shell didn't expand it)
+    echo "$NAME: no match for $dir" 1>&2
+    exit 2
+elif (( $# == 1 )); then
+    echo "$1"
+    exit 0
+else
+    echo "$NAME: too many matches for $dir:" 1>&2
+    ls -d "$@"
+    exit 1
+fi
+
+exit

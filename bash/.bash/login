@@ -1,0 +1,37 @@
+# ~/.bash_profile: executed by the command interpreter for login shells.
+# This file is modified from ~/.profile
+
+# set enviroment
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+# add .perl to PATH, use perl-script
+if [ -d "$HOME/.perl" ] ; then
+    PATH="$PATH:$HOME/.perl"
+fi
+export PATH=":$PATH"
+
+# For texlive
+export PATH=/usr/local/texlive/2009/bin/i386-linux:$PATH
+export MANPATH=/usr/local/texlive/2009/texmf/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2009/texmf/doc/info:$INFOPATH
+
+# set CDPATH
+# export CDPATH="$HOME:/etc"
+
+export PAGER='less -s'
+export EDITOR="vi"
+export VIEWER="view"
+
+# Test login shell
+# set loginshell=yes
+loginshell=yes
+# Ubuntu 的终端配置对话框中可以选择使用 login shell 方式登陆
+
+# include .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+    source "$HOME/.bashrc"
+fi
+

@@ -1,0 +1,13 @@
+本目录的一套脚本，练习bash比实践的意味重，辛苦写了不少东西，后来发现用的不多。
+常用能记住的也就其中少数几个别名aliaes。make也就针对生成aliaes而已。
+
+bashrc:
+比较风骚的就是自定义提示符，使login-shell与sub-shell不同，当初是考虑mc中常用
+subshell。
+
+执行要点：
+1.将.bashrc链接至文件。根据里面调用的.bash_aliases，可能也要作相应链接。
+2.在终端-编辑-配置文件首选项-标题和命令，设置终端模拟器为登陆shell。
+3.在.profile中添加loginshell=yes变量。因为只有loginshell才会读.profile，而所有
+shell启动时都会读.bashrc。ubuntu默认在~下只有.bashrc与.profile，所以会简便起见
+，就修改（链接）这两文件吧。

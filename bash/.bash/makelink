@@ -1,0 +1,13 @@
+# copy this file to ~(Home) and source it to make symbol links correctly
+
+cp -s ~/.bash/aliases ~/.bash_aliases
+cp -s ~/.bash/bashrc ~/.bashrc
+# cp -s ~/.bash/history ~/.bash_history
+# cp -s ~/.bash/login ~/.bash_login
+# cp -s ~/.bash/login ~/.bash_profile
+cp -s ~/.bash/login ~/.profile
+cp -s ~/.bash/logout ~/.bash_logout
+
+# 看新装的12.04系统，原来~下只有.bashrc与.bash_logout
+# 没有.bash_login 或 .bash_profile 但有 .profile
+# 而 history 不必备份，故不作这三个链接，注释之

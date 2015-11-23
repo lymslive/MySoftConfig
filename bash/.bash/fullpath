@@ -1,0 +1,38 @@
+#! /bin/bash
+##
+# filename: fullpath
+# descript: find the full path of $1, require only on input.
+# create-t: 2012-01-03
+# author-e: lymslive@sina.com
+#
+# algorithm: echo $(cd "$(dirname "$0")"; pwd)
+# print the full path to stdout
+# exit 0 if valid path inputed, 1 otherwise.
+##
+
+NAME=$(basename "$0")
+if (( $# != 1 )) || [ -z "$1" ]; then
+    echo "$NAME: Invalid or empty argument!" 1>&2
+    exit 1
+fi
+
+relative="$1"
+fullpath=""
+
+# treat the specail path
+if [ "$relative" = "." ] ; then
+    pwd; exit
+elif [ "$relative" = ".." ] ; then
+    cd ..; pwd; exit
+fi
+
+# remove flag at the end of filename from ls output
+relative=${relative%[/=@>|*]}
+if [ -e "$relative" ]; then
+    fullpath=$(command cd "$(dirname "$relative")"; pwd)/$(basename "$relative")
+    echo "$fullpath"
+    exit 0
+else
+    echo "Invalid path in $NAME: $relative" 1>&2
+    exit 1
+fi

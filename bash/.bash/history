@@ -1,0 +1,500 @@
+cd ..
+cd -
+t
+exit
+g c.b
+gg
+g-
+g c.b
+cd -
+h make
+info make
+g
+r make_alias 
+make
+ls make*
+ls [mM]ake
+ls [mM]ake*
+rm make_alias 
+g ~,v.r
+vi orgnazi.sh 
+fg
+ls -1 *.vim | grep '^\w*\.vim$'
+li [a-zA-Z]*[a-z][A-Z].vim
+fg
+make
+fg
+g-
+tt
+g
+ls vimbak/
+tt
+? fmt
+h fmt
+emacs
+Hibernate 
+vpn
+PlayMusic 
+touchoff
+vpn
+ls .vim*
+cd .vimperator/
+ls
+cd ..
+v .vimperatorrc 
+e .vimperatorrc
+stardict &
+vpn -p
+type patch
+type qsubst
+Hibernate 
+vpn
+vpn -p
+vpn
+g bin
+cd -
+cd bin
+vi checksed
+r checksed
+ed checksed
+r checksed 
+x checksed
+h | more
+Hibernate 
+vpn
+Hii
+Hibernate 
+vpn
+Hibernate 
+vpn
+sudo apt-get clean
+sudo apt-get update
+sudo apt-get upgrade
+j
+jobs
+bg
+ShutDown 
+vpn
+g .w
+g w
+vi 介绍网游白蛇传OL.txt
+touchoff
+fg
+g /b
+cd /boot
+ls
+ls grub
+ls
+firefox 
+bg
+ls
+PlayMusic 
+bg
+Hibernate 
+ShutDown 
+exit
+ls /boot
+vpn
+ls /boot/grub/
+ll /boot
+touchoff
+cd /home/wsnake/
+ls
+uname -r
+sudo aptitude purge ~ilinux-image-.*\(\!`uname -r`\)
+ls /boot
+uname -a
+cat /proc/cpuinfo
+sudo apt-get install -f
+sudo aptitude purge ~ilinux-image-.*\(\!`uname -r`\)
+ls /boot
+sudo aptitude purge ~ilinux-image-.*\(\!`uname -r`\)
+sudo apt-get remove linux-backports-modules-alsa-2.6.31-23-generic
+Hibernate 
+vpn
+d
+cd
+g D
+g Dow
+7zr
+7zr -l *.7z
+7zr l *.7z
+vpn
+Hibernate 
+vpn
+dpkg --configure -a
+sudo dpkg --configure -a
+cd /boot
+ls
+ll
+apt-cache pkgnames
+dpkg -l
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+ls /var/cache/apt/archives
+sudo apt-get autoclean
+sudo apt-get autoremove
+xrandr
+sudo fdisk -l
+ls
+uname -a
+df  -lh
+sudo du -m /boot
+ll
+sudo apt-get remove linux-image-2.6.31-23-generic
+ls
+df  -lh
+uname -a
+dpkg --get-selections |grep linux-image
+sudo aptitude purge ~ilinux-image-.*\(\!`uname -r`\)
+dpkg --get-selections |grep linux-image
+uname -a
+uname -r
+sudo aptitude purge linux-image-2.6.32-34-generic 
+sudo aptitude remove linux-image-2.6.32-34-generic 
+df -lh
+dpkg --get-selections |grep linux-image
+sudo aptitude remove linux-image-2.6.32-35-generic 
+ls
+apt-get -f install
+sudo apt-get -f install
+df -lh
+dpkg --configure -a
+sudo dpkg --configure -a
+sudo apt-get -f install
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+sudo apt-get autoremove
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove
+sudo apt-get upgrade
+ls
+Hibernate 
+mc
+Hibernate 
+cd /home/wsnake/
+ls
+vi 介绍网游白蛇传OL.txt 
+vpn
+ShutDown 
+Hibernate 
+vpn
+dvpn
+vpn -d
+vpn
+dpkg --configure -a
+sudo dpkg --configure -a
+vpn
+python
+bbs
+Hibernate 
+vpn
+cd Downloads/
+ls
+7zr
+ls
+7zr t 太阳神英雄杀（正式版）\(1\).7z 
+7zr x 太阳神英雄杀（正式版）\(1\).7z 
+ls
+vpn
+Hibernate 
+vpn
+vpn -d
+vpn
+ifconfig 
+vpn
+dvpn
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+vpn -d
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+ifconfig 
+Hibernate 
+vpn
+vpn -d
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+ls
+man urar
+urar 2downbank0907TXT2JPG.rar 
+unrar 2downbank0907TXT2JPG.rar 
+unrar x 2downbank0907TXT2JPG.rar 
+ls
+cd TXT2JPG/
+ls
+j
+jobs
+h v
+ls
+alias 
+ls
+r 转换文本.txt 
+see 转换文本.txt 
+v 转换文本.txt 
+vpn
+touchoff
+vpn
+ifconfig 
+g /h/w
+g /h.w
+r tmp
+vi 介绍网游白蛇传OL.txt 
+Hibernate 
+ls
+vi 评动画片《水漫金山》.txt
+cd /b
+g /b
+g /boo
+sudo cp initrd.img-2.6.32-36-generic initrd.img-2.6.31-23-generic 
+ls
+sudo rm initrd.img-2.6.31-23-generic 
+ls
+sudo touch initrd.img-2.6.31-23-generic 
+ls
+sudo touch System.map-2.6.31-23-generic
+g /lib/mo
+cd 2.6.32-34-generic/
+ls
+lls
+ll
+cd ..
+ls
+sudo mkdir 2.6.31-23-generic
+ls
+g /bo
+vpn
+ps
+ps -all
+kill 12375
+man kill
+kill TERM 12375
+kill TERM 12388
+ps -all
+kill TERM 12401
+kill TERM 12347
+Hibernate 
+g /h/w
+g /home
+g w
+vi 当代网络小说笔下的许仙.txt
+fg
+vi 当代网络小说笔下的许仙.txt
+vpn
+cd
+g b
+r worklog 
+alias R
+alias v
+v worklog 
+worklog
+v worklog 
+R worklog 
+worklog
+worklog -h
+worklog -p
+worklog -r
+v ../_work.log 
+v worklog 
+ls
+v checksed 
+v showmatch 
+v vpn
+v xpdfbind 
+v diary
+worklog 
+vi worklog
+worklog
+worklog -r
+fg
+ls
+r diary 
+diary 
+Hibernate 
+python
+Hibernate 
+octave
+ls
+worklog -p
+touch work.log
+ls
+v work.log
+vi work.log
+fg
+vi work.log
+vi +work.log
+vi + work.log
+r work.log 
+vi -c "r \!date" work.log 
+vi panlog
+alias x
+x panlog
+fg
+panlog
+help
+vi panlog
+panlog
+g /h.p
+ls
+vi "+r work.log" work.log 
+r work.log 
+r panlog
+gvim -S Session.vim 
+[M +4
+xelatex TabPrint.tex 
+exit
+jobs
+fg
+exit
+Hibernate 
+g /h.p
+panlog
+diary 
+Hibernate 
+vpn
+Hibernate 
+vpn
+touchoff
+sudo apt-get install -f
+sudo apt-get autoremove
+sudo apt-get install -f
+sudo apt-get autoremove
+uname -a
+dpkg --get-selections|grep linux
+sudo apt-get remove linux-image-2.6.32-34-generic 
+sudo apt-get remove linux-image-2.6.32-36-generic 
+sudo apt-get remove linux-image-2.6.32-37-generic 
+sudo apt-get remove linux-image-2.6.32-38-generic 
+sudo apt-get remove linux-image-2.6.31-23-generic 
+vpn
+Hibernate 
+echo [41mThis is a test
+this is a test
+echo [41mThis is a test
+echo [41m This is a test
+echo [41mThis is a test[0m
+echo [33;44mThis is a test[0m
+echo "[33;44mThis is a test[0m"
+dialog --title Testing --msgbox "This is a test" 10 20
+clear
+dialog --title Testing --msgbox "This is a test"
+dialog -- title "Please answer" --yesno "Is this thing on?" 10 20
+dialog --title "Please answer" --yesno "Is this thing on?" 10 20
+dialog --textbox /etc/passwd 15 45
+clear
+zenity --calendar
+zenity --file-selection
+touchon
+touchoff
+touchon
+cat bin/touchon
+cat bin/touchoff
+touchon
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+g /m/Y
+cd /media/YXD
+vi 程序.txt 
+ls
+vim 程序.txt
+cd
+Hibernate 
+vpn
+Hibernate 
+g /h.p
+. mlatest.sh
+mc
+evolution PolymerHandbook-链转移常数.pdf &
+fg
+kill %1
+jobs
+alias ev
+ev polymer_handbook.pdf &
+less 2010-11-14讨论小结.txt 
+vi 2010-11-14讨论小结.txt 
+vi 封管实验设计.txt 
+less Seminar2010B质疑笔记.txt 
+vi Seminar2010B质疑笔记.txt 
+mkdir report
+ev polymer_handbook.pdf &
+exit
+g /h.p
+mc
+ShutDown 
+touchoff
+vpn
+Hibernate 
+vpn
+Hibernate 
+vpn
+Hibernate 
+touchoff
+vpn
+firefox &
+Hibernate 
+vpn
+email 
+evolution &
+firefox &
+Hibernate 
+ls
+cd Diary
+ls
+v telperson.txt
+cd ..
+vim
+fg
+~~
+fg
+touchoff
+vpn
+Hibernate 
+vim
+~~
+fg
+ls
+tar xzvf HelpFiles.tar.gz 
+ls
+./setup 
+sudo ./setup 
+mkdir helpfiles
+mv patch* resLang set* helpfiles/
+ls
+tar tf HelpFiles.tar.gz 
+helpfiles/setup 
+sudo helpfiles/setup 
+jobs

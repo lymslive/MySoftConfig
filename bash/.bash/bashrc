@@ -1,0 +1,88 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+## Option setting:
+shopt -s login_shell
+# auto cd to the directory if it is the command name
+shopt -s autocd
+shopt -s cdspell
+# glob hidden files (dot files)
+# shopt -s dotglob
+shopt -s histreedit
+shopt -s histverify
+shopt -s no_empty_cmd_completion
+# shopt -s nocaseglob
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# prevent the shell from overwriting a file with > file
+# use >| if really want to overwrite
+set -o noclobber
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+## Command History:
+# ignoredups and ignorespace
+HISTCONTROL=ignoreboth
+# ingore trival command, not adding to history
+# HISTIGNORE=ls:pwd
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# HISTSIZE=500
+# HISTFILESIZE=500
+
+# custom histchars, default is "!#"
+# histchars=',#'
+
+## Prompt Fancy:
+# use different PS1 in loginshell(top shell) and subshell
+# $loginshell is defined in .profile
+# another way, use $SHLVL (how many subshells deep your current shell is)
+if [ -n "$loginshell" ]; then
+    PS1='\[\033[01;32m\]!\!:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='\[\033[01;32m\]bash $SHLVL:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    # PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+## Other fancity:
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable programmable completion features 
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# load bash_operate support
+# if [ -r ~/con/bash/bash_operate.sh ] ; then
+    # source ~/con/bash/bash_operate.sh
+# fi
+[ -r ~/.bash/shcmd.sh ] && source ~/.bash/shcmd.sh
+
+## Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+alias matlabsh='matlab -nojvm -nosplash'
+
+## welcome text
+# clear
+echo "Hello, World!"
+date
+echo "Welcom ${USERNAME}@${HOSTNAME}. Working ${BASH} ${BASH_VERSION}"

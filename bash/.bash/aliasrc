@@ -1,0 +1,218 @@
+# ~/con/bash/aliasrc: config for bash aliases
+
+#
+# Basic: short for core utilities {{{1
+#
+
+# aliases for common commande with favourate options
+ls = ls -hBF --color=auto --group-directories-first
+ll = ls -l
+cp = cp -riv
+mv = mv -iv
+rm = rm -Iv
+ln = ln -iv
+lk = ln -s
+mkdir = mkdir -pv
+
+ed = ed -vp "ed*>"
+
+pd = pushd
+ppd = popd
+dir = dirs -v
+
+grep = grep --color=auto
+fgrep = fgrep --color=auto
+egrep = egrep --color=auto
+
+# sudo alias. Captalization
+Cp = sudo cp
+Mv = sudo mv
+Rm = sudo rm
+Ln = sudo ln
+Lk = sudo lk
+Mkdir = sudo mkdir
+
+Vi = sudo vi
+
+Update = sudo apt-get update
+Upgrade = sudo apt-get upgrade
+Instll = sudo apt-get install
+
+#
+# Advanced: full keyboard design, one command set for each letter {{{1
+#
+
+## top-left keys {{{2
+# q: record macros, alias in bash term
+q = alias
+Q = unalias
+qq = viewAlias
+# w: write, write file from shell just using cat
+w = cat >
+W = cat >>
+# e: edit with default editor
+# TODO: E call editor application dependent by file type(extention suffix)
+e = vi
+E = gvim
+# r: read, read content from file, also using cat
+r = cat
+R = cat -n
+rw = tee
+r0 = head
+r- = tail
+# t: target, set target directory
+# T: shift target array; TT: swap the first tow target
+# tt: swap the $PWD and top of target
+t = addTarget
+T = delTarget
+TT = swapTarget
+tt = swapTarPWD
+
+## top-right keys {{{2
+# y: yank, yield, mark source files to operate on
+y = yyyYank
+Y = addYank -x
+yy = addYank -s $(ls)
+YY = addYank -a $(ls)
+y+ = addYank -a
+y- = delYank
+y. = addYank -sf
+# u: undo, unset yank/target/hotdir array 
+# U: exchange/switch target and current direcoty
+u = underSave
+U = underSave -r
+# i: Insert, creat new folder or file
+i = mkdir
+I = touch
+# o: open tar file, O creat tar file
+o = tar xzvf
+O = tar czvf
+# p: copy yanked files to current directory
+# P: copy symbol link other than copying content
+p = Copy $PWD
+P = Link $PWD
+
+## middle-left keys {{{2
+# a: awk
+a = awk
+A = awk -f
+# s: sed, use extend regexp set, no default output
+s = sed -nre
+S = sed -nrf
+# d: delete, enhanced rm
+# dd: $ delete current directory and cd to parent
+d = Delete
+D = Delete -r
+dd = cd .. && rm -rIv $OLDPWD
+# f: find tools
+f = find
+F = grep
+# g: goto cd predefine directory, most like pushd
+# G: popd, GG: exchanges the top two directories(pushd with no arg)
+# gg: go to the older directory.
+g = Goto
+G = popd
+gg = pushd
+GG = cd
+# other favorite directory
+g- = cd -
+g. = cd ..
+gh = pushd ~
+gm = pushd ~/.matlab
+gv = pushd ~/.vim
+
+## middle-right keys {{{2
+# h: hot directory list
+h = Help
+H = fc
+# j: jobs relate
+j = fg
+J = jobs -l
+# k: kill jobs
+k = jobs
+K = kill
+# l: ls tools
+# l, list array variabls content, or dir content as builtin ls
+# L, list both pwd and target dir at the same time
+l = Listor
+# L = CTList
+# quick list out saved path array
+lt = Listor -t
+lT = Listor -T
+lg = Listor -g
+lG = Listor -G
+lh = history | less
+# m: move and rename
+m = Move $PWD
+M = rename
+
+## bottom keys {{{2
+# n: Next(previous) history line, enhanced fc
+n = nextHist
+N = !!
+NN = !-2
+# b: backup files
+b = Backup
+B = Backup $PWD
+# v: view, less
+v = less
+V = more
+# TODO: V call viewer application dependent by filetype
+# c: command, other most often command
+c = command
+C = builtin
+# x: executable
+x = chmod +x
+X = chmod -x
+xp = perl
+xy = python
+xr = ruby
+xi = iry
+xo = octave
+
+# z: help information for these letter alias schem
+# TODO: z by letter argument
+# z alias | sort | less
+z = man
+Z = info
+? = findcmd
+
+#
+# Others: various aliases {{{1
+#
+
+# Wine program
+# wfx = wine foxit
+# foxit = wine foxit
+# ultraiso = wine /usr/local/wine/UltraISO/UltraISO.exe
+
+# device
+Mt = sudo mount -t iso9660 -o loop,iocharset=utf8
+isomount = sudo mount -t iso9660 -o loop,iocharset=utf8
+
+# Shutdown manage
+Reboot = sudo reboot
+ShutDown = sudo shutdown now -P
+Halt = sudo halt
+# Hibernate sudo pm-hibernate
+# Suspend sudo pm-suspend
+Hibernate = sudo pm-hibernate
+Suspend = sudo pm-suspend
+
+# alias for applications
+nt = nautilus .
+fx = FoxitReader
+ff = firefox
+ev = evince
+lf = leafpad
+# md = mendeleydesktop
+
+# reload bashrc
+rebash = source ~/.bashrc
+debug = set -o verbose -o xtrace
+nodebug = set +o verbose +o xtrace
+
+#  misspellings
+exti = exit
+ehco = echo
+
