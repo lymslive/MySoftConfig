@@ -9,8 +9,9 @@
 %   $Revision: 1.4 $  $Date: 2000/06/01 16:19:26 $
 %   Autor: lymslive
 
-lastpath=pwd;
-startdir = '~/.matlab';
+lastpath_ = pwd;
+% startdir = '~/.matlab';
+startdir = 'd:/MATLAB/work';
 cd(startdir);
 disp('Saving workspace data to "recent.mat"');
 clear startdir;
