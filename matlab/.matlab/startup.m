@@ -1,6 +1,7 @@
 % startup.m: called by %MATLABROOT/toolbox/local/matlabrc.m in searth path
 
 startdir = 'd:/MATLAB/work';
+% startdir = '~/.matlab';
 cd(startdir);
 
 % get time and transform to yyyymmdd
@@ -12,15 +13,19 @@ ymd=[yy md];
 ti=datestr(ct,13);
 
 % record log with filename based on date
-logName=[pwd '\log\matlab' ymd '.log'];
+logPath = [pwd filesep 'log'];
+if exist(logPath, 'dir') ~= 7
+    mkdir('log');
+end
+logName=[logPath filesep 'matlab' ymd '.log'];
 diary(logName);
-disp(['% Now is£º' datestr(now) 'MATLAB work BEGIN...']);
+disp(['% Now is: ' datestr(now) 'MATLAB work BEGIN...']);
 clear;
 
 % load last workspace saveed in recent.mat, and cd to last work directory
 load recent lastpath_;
 try
-	cd (lastpath);
+	cd (lastpath_);
 catch
 	disp('can not cd to last path!');
 end
