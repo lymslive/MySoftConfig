@@ -1,0 +1,19 @@
+{
+    "files.autoGuessEncoding": true,
+    "codegnuglobal.executable": "d:\\Apps\\gnuglobal\\bin\\global.exe",
+    "breadcrumbs.enabled": true,
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Solarized Dark",
+    "vim.useSystemClipboard": true,
+    "vim.vimrc.path": "$HOME/vimfiles/vimrc.vscode",
+    "vim.vimrc.enable": true,
+    "vim.commandLineModeKeyBindingsNonRecursive": [
+        {
+            "before": ["A"],
+            "commands": ["C_Cpp.SwitchHeaderSource"]
+        }
+    ]
+}
