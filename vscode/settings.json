@@ -7,13 +7,57 @@
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Solarized Dark",
+    "vim.easymotion": true,
     "vim.useSystemClipboard": true,
-    "vim.vimrc.path": "$HOME/vimfiles/vimrc.vscode",
     "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/vimfiles/vimrc.vscode",
     "vim.commandLineModeKeyBindingsNonRecursive": [
         {
             "before": ["A"],
             "commands": ["C_Cpp.SwitchHeaderSource"]
         }
-    ]
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [",", "`"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": [",", "1"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": [",", "2"],
+            "commands": ["workbench.view.search"]
+        },
+        {
+            "before": [",", "3"],
+            "commands": ["workbench.view.scm"]
+        },
+        {
+            "before": [",", "4"],
+            "commands": ["workbench.view.debug"]
+        },
+        {
+            "before": [",", "5"],
+            "commands": ["workbench.view.extensions"]
+        },
+        {
+            "before": [";", "o"],
+            "commands": ["editor.action.copyLinesDownAction"]
+        },
+        {
+            "before": [";", "O"],
+            "commands": ["editor.action.copyLinesUpAction"]
+        },
+        {
+            "before": ["-"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["_"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        }
+    ],
+    // "vim.leader": "F" // no effect for easymotion
 }
